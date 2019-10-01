@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::group(['prefix'=>'panel','middleware'=>'auth'],function (){
+    Route::get('/',function (){
+        return view('sayfalar.home');
+    })->name('home');
 });
+
+Route::get('/exit',function (){\Illuminate\Support\Facades\Auth::logout();
+    return redirect()->route('login');
+})->name('logout');
