@@ -16,9 +16,9 @@
     <!-- NProgress -->
     <link href="{{asset('CMS/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="{{asset('CMS/cms/vendors/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('CMS/vendors/animate.css/animate.min.css')}}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="{{asset('CMS/cms/build/css/custom.min.css')}}" rel="stylesheet">
+    <link href="{{asset('CMS/build/css/custom.min.css')}}" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -46,7 +46,7 @@
 
                     <div class="separator">
                         <p class="change_link">New to site?
-                            <a href="#" class="to_register"> Create Account </a>
+                            <a href="{{route('register')}}" class="to_register"> Create Account </a>
                         </p>
                         <div class="clearfix"></div>
                         <br />

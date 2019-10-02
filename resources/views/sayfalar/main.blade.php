@@ -41,7 +41,7 @@
                     <div class="profile_pic"></div>
                     <div style="margin-left:35px;text-align: center" class="profile_info">
                         <span>Welcome,</span>
-                        <h2>#</h2>
+                        <h2>{{auth()->user()->name}}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -61,8 +61,8 @@
                             </li>
                             <li><a><i class="fa fa-desktop"></i> News <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="#">News List</a></li>
-                                    <li><a href="#">News Add</a></li>
+                                    <li><a href="{{route('name_get_news')}}">News List</a></li>
+                                    <li><a href="{{route('name_show_create_news')}}">News Add</a></li>
                                 </ul>
                             </li>
 
@@ -99,7 +99,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                #
+                                {{auth()->user()->name}}
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

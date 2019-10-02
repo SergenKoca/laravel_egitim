@@ -16,9 +16,9 @@
     <!-- NProgress -->
     <link href="{{asset('CMS/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="{{asset('CMS/cms/vendors/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('CMS/vendors/animate.css/animate.min.css')}}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="{{asset('CMS/cms/build/css/custom.min.css')}}" rel="stylesheet">
+    <link href="{{asset('CMS/build/css/custom.min.css')}}" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -32,7 +32,8 @@
                 <!-- normalde php'de formadan veri gönderirken <form method="POST" action="/view_adı"> yapardık ama
                 laravel ile bunun kısa yolu var. (sp: süslü parantez): spspForm::open(array('route'=>'register')) spsp
                 ile direkt bu formun post formu olduğunu ve tekar bu ekrana yönlendirmesi gerektiğini belirtmiş olduk
-                -->
+                dikkat edersek web.php'de register adında bir route yok. peki bu nereye gitti? laravelin bize sağladığı güzelliklerden biri.Auth gibi temel işlevleri bizim için
+                hallediyor. normalde route'a  gidip route'ta bir controller'a yönlendirir ama biz temel auth işlevi için uğraşmıyoruz laravel bizim yerimize yapıyor.-->
                 {{Form::open(array('route'=>'register'))}}
                     <h1>Create Account</h1>
                     <div>
@@ -55,7 +56,7 @@
 
                     <div class="separator">
                         <p class="change_link">Already a member ?
-                            <a href="#" class="to_register"> Log in </a>
+                            <a href="{{route('login')}}" class="to_register"> Log in </a>
                         </p>
 
                         <div class="clearfix"></div>
