@@ -56,7 +56,7 @@
                             <li><a><i class="fa fa-edit"></i> Menu <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="form.html">Menu List</a></li>
-                                    <li><a href="form_advanced.html">Add Menu</a></li>
+                                    <li><a href="{{route('name_show_create_menu')}}">Add Menu</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-desktop"></i> News <span class="fa fa-chevron-down"></span></a>

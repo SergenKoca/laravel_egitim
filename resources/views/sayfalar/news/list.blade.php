@@ -30,7 +30,7 @@
                                     <td style="width: 10%"> <small>{{$value->created_at}}</small></td>
                                     <td style="width: 10%"> <small>{{$value->updated_at}}</small></td>
                                     <td style="width: 15%">
-                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                        <a href="{{route('name_show_edit_news',$value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                                         <a href="{{route('name_delete_news',$value->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                     </td>
                                 </tr>
