@@ -18,7 +18,7 @@
                             <div class="col-md-55">
                                 <div class="thumbnail">
                                     <div class="image view view-first">
-                                        <img style="width: 100%;" src="{{asset('images/news'.\App\NewsModel::find($news->id)->img_url)}}" alt="image">
+                                        <img style="width: 100%;" src="{{asset('images/news/'.\App\NewsModel::find($news->id)->img_url)}}" alt="image">
                                     </div>
                                 </div>
                             </div>

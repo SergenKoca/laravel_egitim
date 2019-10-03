@@ -17,11 +17,13 @@ class newsController extends Controller
         $newmodel->title = $request->input('title');
         $newmodel->content = $request->input('content');
 
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        $imageName = time().'.'.$request->image->extension();
-        $newmodel->img_url=$request->image->move(public_path('images'), $imageName);
+
+       if($request->hasFile('image')){
+           $file=$request->file('image');
+           $file->move(public_path() . '/images/news',$file->getClientOriginalName());
+           $newmodel->img_url=$file->getClientOriginalName();
+       }
+
 
         $newmodel->save();
 

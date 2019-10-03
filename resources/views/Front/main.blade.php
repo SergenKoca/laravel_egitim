@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <title>Fashion is our passion | Free responsive Fashion Blog template
+    <title>Laravel | CMS
     </title>
-    <meta name="description" content="Download free amazing responsive Fashion Blog template."/>
-    <meta name="keywords" content="free, responsive, blog, fashion, web site, template"/>
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsee.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/components.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsee.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- CUSTOM STYLE -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/template-style.css">
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/modernizr.js"></script>
-    <script type="text/javascript" src="js/responsee.js"></script>
+    <link rel="stylesheet" href="{{asset('css/template-style.css')}}">
+    <script type="text/javascript" src="{{asset('js/jquery-1.8.3.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-ui.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/modernizr.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/responsee.js')}}"></script>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -34,17 +32,25 @@
                 <h1>free fashion blog template</h1>
                 <ul class="top-ul right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{route('main')}}">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="{{route('name_front_index')}}">Archive</a>
                     </li>
+                    @foreach($menus as $item)
                     <li>
-                        <a href="archive.html">Archive</a>
+                        <a href="{{route('name_page',$item->id)}}">{{$item->title}}</a>
+                        @if(count($item->subMenu))
+                                <ul>
+                                    @foreach($item->subMenu as $subItem)
+                                            <li>
+                                                <a>{{$subItem->title}}</a>
+                                            </li>
+                                        @endforeach
+                                </ul>
+                            @endif
                     </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    @endforeach
                     <div class="social right">
                         <a target="_blank" href="https://www.facebook.com/myresponsee">
                             <i class="icon-facebook_circle icon2x"></i>
@@ -59,135 +65,7 @@
     </div>
 </header>
 <!-- MAIN SECTION -->
-<section id="home-section" class="line">
-    <div class="margin">
-        <!-- ARTICLES -->
-        <div class="s-12 l-12">
-            <div class="slider-container">
-                <div class="flexbox-slider flexbox-slider-1">
-                    <div class="flexbox-slide">
-                        <img src="img/post1-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #1 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post2-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #2 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post3-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #3 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post4-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #4 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post1-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #1 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post2-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #2 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post3-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #3 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post4-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #4 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post1-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #1 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post2-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #2 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post3-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #3 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flexbox-slide">
-                        <img src="img/post4-big.jpg" alt="Slide Image">
-                        <div class="text-block">
-                            <h3>Slide #4 is here</h3>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ARTICLE 1 -->
-
-            <!-- ARTICLE 2 -->
-
-            <!-- ARTICLE 3 -->
-
-            <!-- ARTICLE 4 -->
-
-            <!-- ARTICLE 5 -->
-        </div>
-        <!-- SIDEBAR -->
-    </div>
-</section>
+@yield('content')
 <!-- FOOTER -->
 <div class="line">
     <footer>

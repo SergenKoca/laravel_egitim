@@ -18,6 +18,11 @@
 
 Auth::routes();
 
+Route::get('/','CMS\FrontController@index')->name('main');
+Route::get('/archive','Front\newsController@index')->name('name_front_index');
+Route::get('/archive/{id}','Front\newsController@view')->name('name_show_view');
+Route::get('/page{id}','CMS\FrontController@page')->name('name_page');
+
 Route::group(['prefix'=>'panel','middleware'=>'auth'],function (){
     Route::get('/',function (){
         return view('sayfalar.home');
