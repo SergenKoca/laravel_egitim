@@ -35,6 +35,15 @@ Route::group(['prefix'=>'panel','middleware'=>'auth'],function (){
     Route::group(['prefix'=>'menu'],function (){
         Route::get('/create_menu','CMS\menuController@create')->name('name_show_create_menu');
         Route::post('/create_menu_post','CMS\menuController@create_post')->name('name_create_menu');
+        Route::get('/create_sub_menu','CMS\menuController@create_submenu')->name('name_show_create_sub_menu');
+        Route::post('/create_sub_menu_post','CMS\menuController@create_submenu_post')->name('name_create_sub_menu');
+        Route::get('/menu_list','CMS\menuController@get_menu')->name('name_get_menu');
+        Route::get('/edit_menu/{id}','CMS\menuController@show_edit_menu')->name('name_show_edit_menu');
+        Route::post('edit_menu_post/{id}','CMS\menuController@post_edit_menu')->name('name_post_edit_name');
+        Route::get('/edit_sub_menu/{id}','CMS\menuController@show_edit_sub_menu')->name('name_show_edit_sub_menu');
+        Route::post('edit_sub_menu_post/{id}','CMS\menuController@post_edit_sub_menu')->name('name_post_edit_sub_menu');
+        Route::get('delete_menu/{id}','CMS\menuController@delete_menu')->name('name_delete_menu');
+        Route::get('delete_sub_menu/{id}','CMS\menuController@delete_sub_menu')->name('name_delete_sub_menu');
     });
 });
 
